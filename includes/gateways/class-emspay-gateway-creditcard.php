@@ -213,8 +213,9 @@ class Emspay_Gateway_Creditcard extends Emspay_Gateway {
 
 
 	public function hosted_payment_args( $args, $order ) {
-		if ( $this->authenticate_transaction ) {
-			$args['authenticateTransaction'] = $this->authenticate_transaction;
+		$args['authenticateTransaction'] = $this->authenticate_transaction;
+		if ( $this->authenticate_transaction  ) {
+			$args['threeDSRequestorChallengeIndicator'] = 1;
 		}
 
 		return $args;

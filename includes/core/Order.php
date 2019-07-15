@@ -106,6 +106,7 @@ class Order {
     'klarnaHouseNumber' => 'notempty',
     'klarnaHouseNumberExtension' => 'notempty',
     'klarnaPhone' => 'notempty',
+    'threeDSRequestorChallengeIndicator' => 'notempty',
 
     // in locale format (en_US, en_GB)
     'language' => 'notempty'

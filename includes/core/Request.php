@@ -34,6 +34,7 @@ class Request {
 		'vattax' => array('order', 'vattax'),
 		'subtotal' => array('order', 'subtotal'),
 		'authenticateTransaction' => array('order', 'authenticateTransaction'),
+		'threeDSRequestorChallengeIndicator' => array('order', 'threeDSRequestorChallengeIndicator'),
 		'bcompany' => array('order', 'bcompany'),
 		'bname' => array('order', 'bname'),
 		'baddr1' => array('order', 'baddr1'),
