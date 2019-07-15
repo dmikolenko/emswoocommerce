@@ -415,9 +415,12 @@ abstract class Emspay_Gateway extends WC_Payment_Gateway {
 		self::log( 'Payment form fields for Order #' . $order_id . ' ' . print_r( $form_fields, true ) );
 		?>
         <form method="post" action="<?php echo $hosted_payment->getFormAction(); ?>">
-			<?php foreach ( $form_fields as $name => $value ) { ?>
-                <input type="hidden" name="<?php echo $name; ?>" value="<?php echo esc_attr( $value ); ?>">
-			<?php } ?>
+	        <?php foreach ( $form_fields as $name => $value ) { ?>
+		        <input type="hidden" name="<?php echo $name; ?>" value="<?php echo esc_attr( $value ); ?>">
+		        <?php if ( $name === 'authenticateTransaction' ): ?>
+			        <input type="hidden" name="threeDSRequestorChallengeIndicator" value="1">
+		        <?php endif; ?>
+	        <?php } ?>
             <input type="submit" class="button" value="<?php esc_attr_e( 'Payment', 'emspay' ); ?>"/>
         </form>
 
